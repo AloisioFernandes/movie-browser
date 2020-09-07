@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View, TextInput, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
+import { Feather } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 import { ScrollView } from 'react-native-gesture-handler'
 
@@ -28,7 +29,7 @@ const Home = () => {
       <Text style={styles.titulo}>HomePage</Text>
       <TextInput style={styles.busca} onChangeText={setMovie} />
       <TouchableOpacity style={styles.botao} onPress={handleSearch}>
-        <Text style={styles.titulo}>Buscar</Text>
+        <Feather name='search' size={36} color='#fff' />
       </TouchableOpacity>
       <ScrollView>
         <View style={styles.display}>
