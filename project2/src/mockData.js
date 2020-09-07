@@ -21,7 +21,7 @@ export const search = {"Search":[
   "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
   },
   {
-  "Title":"Star Wars: The Force Awakens",
+  "Title":"Star Wars: Episode VII - The Force Awakens",
   "Year":"2015",
   "imdbID":"tt2488496",
   "Type":"movie",
