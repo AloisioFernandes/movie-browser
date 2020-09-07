@@ -53,7 +53,7 @@ export const search = {"Search":[
   "Year":"2002",
   "imdbID":"tt0121765",
   "Type":"movie",
-  "Poster":"https://ia.media-imdb.com/images/M/MV5BOWNkZmVjODAtNTFlYy00NTQwLWJhY2UtMmFmZTkyOWJmZjZiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg"
+  "Poster":"https://images-na.ssl-images-amazon.com/images/I/61KEdyRT5eL._AC_SL1050_.jpg"
   },
   {
   "Title":"Star Trek: Into Darkness",

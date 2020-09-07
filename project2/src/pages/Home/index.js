@@ -24,21 +24,33 @@ const Home = () => {
     setResults(res)
   }
 
+  function handleDetails(titulo, cartaz, ano) {
+    navigation.navigate('Detail', { title: titulo, poster: cartaz, year: ano })
+  }
+
   return (
     <View style={styles.pagina}>
       <Text style={styles.titulo}>HomePage</Text>
-      <TextInput style={styles.busca} onChangeText={setMovie} />
-      <TouchableOpacity style={styles.botao} onPress={handleSearch}>
-        <Feather name='search' size={36} color='#fff' />
-      </TouchableOpacity>
+
+      <View style={styles.pesquisa}>
+        <TextInput style={styles.busca} onChangeText={setMovie} />
+        <TouchableOpacity style={styles.botao} onPress={handleSearch}>
+          <Feather name='search' size={36} color='#fff' />
+        </TouchableOpacity>
+      </View>
+
       <ScrollView>
         <View style={styles.display}>
         {results.map(filme => {
           return (
-            <View key={filme.Title} style={styles.cartaz}>
+            <TouchableOpacity 
+              key={filme.Title} 
+              style={styles.cartaz} 
+              onPress={() => handleDetails(filme.Title, filme.Poster, filme.Year)}
+            >
               <Image style={styles.logo} source={{ uri: filme.Poster }}/>
-              <Text style={styles.titulo}>{filme.Title}</Text>
-            </View>
+              <Text style={styles.titulo} numberOfLines={3} >{filme.Title}{'\n'}{'\n'}</Text>
+            </TouchableOpacity>
           )
         })}
         </View>
@@ -51,6 +63,13 @@ const styles = StyleSheet.create({
   pagina: {
     flex: 1,
     backgroundColor: '#000'
+  },
+
+  pesquisa: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 34,
+    marginBottom: 12
   },
 
   busca: {
@@ -72,16 +91,23 @@ const styles = StyleSheet.create({
   },
 
   cartaz: {
-    width: 104,
+    width: 94,
+    alignItems: 'center',
+    backgroundColor: '#aaa',
+    margin: 12,
+    borderRadius: 4
   },
 
   logo: {
     width: 84,
-    height: 111
+    height: 126,
+    marginTop: 5
   },
 
   titulo: {
-    color: '#fff'
+    color: '#fff',
+    marginLeft: 5,
+    padding: 2
   }
 })
 
