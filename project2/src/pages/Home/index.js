@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <View style={styles.pagina}>
-      <Text style={styles.titulo}>HomePage</Text>
+      <Text style={styles.texto}>Movie Browser</Text>
 
       <View style={styles.pesquisa}>
         <TextInput style={styles.busca} onChangeText={setMovie} />
@@ -65,10 +65,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#000'
   },
 
+  texto: {
+    color: '#fff',
+    fontSize: 28,
+    marginTop: 25
+  },
+
   pesquisa: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 34,
+    marginTop: 12,
     marginBottom: 12
   },
 
