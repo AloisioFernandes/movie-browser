@@ -17,13 +17,13 @@ const Detail = () => {
     setInfo(movie)
   })
 
-  function goBack() {
+  function handleGoBack() {
     navigation.goBack()
   }
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.goBack} onPress={goBack}>
+      <TouchableOpacity style={styles.goBack} onPress={handleGoBack}>
         <Feather name="arrow-left" size={35} color='#888' />
       </TouchableOpacity>
 
