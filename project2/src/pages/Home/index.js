@@ -18,10 +18,15 @@ const Home = () => {
   }, [])
 
   function handleSearch() {
-    const res = resMovies.filter(film => {
-      return film.Title.toLowerCase().includes(movie.trim().toLowerCase()) //verifica se existe algum filme com título que contenha palavra digitada na busca
-    })
-    setResults(res)
+    if(movie === '') {
+      alert('Digite o título de um filme')
+      return
+    } else {
+      const res = resMovies.filter(film => {
+        return film.Title.toLowerCase().includes(movie.trim().toLowerCase()) //verifica se existe algum filme com título que contenha palavra digitada na busca
+      })
+      setResults(res)
+    }
   }
 
   function handleDetails(titulo, cartaz, ano) {
@@ -41,18 +46,21 @@ const Home = () => {
 
       <ScrollView>
         <View style={styles.display}>
-        {results.map(filme => {
-          return (
-            <TouchableOpacity 
-              key={filme.Title} 
-              style={styles.cartaz} 
-              onPress={() => handleDetails(filme.Title, filme.Poster, filme.Year)}
-            >
-              <Image style={styles.logo} source={{ uri: filme.Poster }}/>
-              <Text style={styles.titulo} numberOfLines={3} >{filme.Title}{'\n'}{'\n'}</Text>
-            </TouchableOpacity>
-          )
-        })}
+        {results.length > 0 //verifica se resultados foram encontrados
+          ? results.map(filme => {
+              return (
+                <TouchableOpacity 
+                  key={filme.Title} 
+                  style={styles.cartaz} 
+                  onPress={() => handleDetails(filme.Title, filme.Poster, filme.Year)}
+                >
+                  <Image style={styles.logo} source={{ uri: filme.Poster }}/>
+                  <Text style={styles.titulo} numberOfLines={3} >{filme.Title}{'\n'}{'\n'}</Text>
+                </TouchableOpacity>
+              )
+            })
+          : <Text style={styles.notFound}>Nenhum resultado encontrado</Text>
+        }
         </View>
       </ScrollView>
     </View>
@@ -114,6 +122,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     marginLeft: 5,
     padding: 2
+  },
+
+  notFound: {
+    color: '#999',
+    fontSize: 28,
+    marginTop: 100
   }
 })
 
