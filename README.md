@@ -23,13 +23,13 @@
 
 ## Primeiro passo - baixar o projeto
 Faça download do repositório acima ou use o seguinte comando na pasta onde deseja baixar o projeto:
- - git clone https://github.com/AloisioFernandes/
+ - git clone https://github.com/AloisioFernandes/movie-browser.git
 
-## Terceiro passo - instalar dependências
+## Segundo passo - instalar dependências
 Digite o seguinte comando dentro da pasta project2 através do terminal:
  - npm install
 
-## Sexto passo - iniciar app
+## Terceiro passo - iniciar app
 Dentro da pasta project2, digite o seguinte comando no terminal: 
  - expo start
 
