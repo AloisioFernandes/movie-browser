@@ -1,5 +1,6 @@
 # Movie Browser
  Aplicativo que simula site de busca de vídeos feito como projeto para treinar React Native.
+ Modificação 30/11/2020
 
  <p align="center">
   <img align="center" src=".github/Search.png" alt="Busca de Filmes" width="275" border="0">
